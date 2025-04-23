@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.5 on darwin)" generated="20250330 22:57:15.710" rpa="false" schemaversion="4">
+<suite id="s1" name="Signup Test" source="/Users/nk/wcw-robot/tests/signup_test.robot">
+<kw name="Open Browser With Options" library="common" type="SETUP">
+<arg>${TEMPMAIL_URL}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20250330 22:57:15.815" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1030e5110&gt;</msg>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.815"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{chrome_args}</var>
+<arg>--disable-blink-features=AutomationControlled</arg>
+<arg>--start-maximized</arg>
+<arg>--no-sandbox</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20250330 22:57:15.815" level="INFO">@{chrome_args} = [ --disable-blink-features=AutomationControlled | --start-maximized | --no-sandbox | --disable-dev-shm-usage ]</msg>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.815"/>
+</kw>
+<for flavor="IN">
+<var>${arg}</var>
+<value>@{chrome_args}</value>
+<iter>
+<var name="${arg}">--disable-blink-features=AutomationControlled</var>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.815"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.815"/>
+</iter>
+<iter>
+<var name="${arg}">--start-maximized</var>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.816"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.816"/>
+</iter>
+<iter>
+<var name="${arg}">--no-sandbox</var>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</iter>
+<iter>
+<var name="${arg}">--disable-dev-shm-usage</var>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>${arg}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</iter>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:15.816"/>
+</for>
+<kw name="Create List" library="BuiltIn">
+<var>${exclude_switches}</var>
+<arg>enable-automation</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20250330 22:57:15.816" level="INFO">${exclude_switches} = ['enable-automation']</msg>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>excludeSwitches</arg>
+<arg>${exclude_switches}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_experimental_option</arg>
+<arg>useAutomationExtension</arg>
+<arg>${FALSE}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:15.816"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20250330 22:57:15.816" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20250330 22:57:15.816" endtime="20250330 22:57:16.747"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20250330 22:57:16.747" level="INFO">Opening url 'https://tempmail.so'</msg>
+<status status="PASS" starttime="20250330 22:57:16.747" endtime="20250330 22:57:17.216"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250330 22:57:17.217" endtime="20250330 22:57:17.901"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${SELENIUM_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20250330 22:57:17.901" endtime="20250330 22:57:17.902"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${SELENIUM_SPEED}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20250330 22:57:17.902" endtime="20250330 22:57:17.902"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>10s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20250330 22:57:17.902" endtime="20250330 22:57:18.408"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:15.815" endtime="20250330 22:57:18.408"/>
+</kw>
+<test id="s1-t1" name="Sign Up and Activate Account" line="12">
+<kw name="Get Temp Email">
+<doc>Retrieve the temporary email by finding and clicking the Copy button</doc>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250330 22:57:28.412" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20250330 22:57:18.411" endtime="20250330 22:57:28.412"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${TEMP_EMAIL_LOCATOR} # Ensure Copy button is ready</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20250330 22:57:28.443" level="FAIL">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=134.0.6998.166); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+0   chromedriver                        0x000000010538d804 cxxbridge1$str$ptr + 2785964
+1   chromedriver                        0x0000000105385ddc cxxbridge1$str$ptr + 2754692
+2   chromedriver                        0x0000000104ed9ea8 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000104edfcd0 cxxbridge1$string$len + 117032
+4   chromedriver                        0x0000000104ee1d74 cxxbridge1$string$len + 125388
+5   chromedriver                        0x0000000104ee1e1c cxxbridge1$string$len + 125556
+6   chromedriver                        0x0000000104f20d9c cxxbridge1$string$len + 383476
+7   chromedriver                        0x0000000104f62678 cxxbridge1$string$len + 651984
+8   chromedriver                        0x0000000104f1535c cxxbridge1$string$len + 335796
+9   chromedriver                        0x0000000105352cd4 cxxbridge1$str$ptr + 2545532
+10  chromedriver                        0x0000000105355fa0 cxxbridge1$str$ptr + 2558536
+11  chromedriver                        0x0000000105332d04 cxxbridge1$str$ptr + 2414508
+12  chromedriver                        0x0000000105356800 cxxbridge1$str$ptr + 2560680
+13  chromedriver                        0x0000000105323ba0 cxxbridge1$str$ptr + 2352712
+14  chromedriver                        0x000000010537645c cxxbridge1$str$ptr + 2690820
+15  chromedriver                        0x00000001053765e4 cxxbridge1$str$ptr + 2691212
+16  chromedriver                        0x0000000105385a50 cxxbridge1$str$ptr + 2753784
+17  libsystem_pthread.dylib             0x0000000191a782e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x0000000191a730fc thread_start + 8
+</msg>
+<status status="FAIL" starttime="20250330 22:57:28.413" endtime="20250330 22:57:28.447"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${result}</var>
+<var>${error}</var>
+<arg>Get Text</arg>
+<arg>${TEMP_EMAIL_LOCATOR}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Error: ${error}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${temp_email}</var>
+<arg>${TEMP_EMAIL_LOCATOR}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${temp_email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>-----temp_email: ${temp_email}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<status status="FAIL" starttime="20250330 22:57:18.410" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Open New Tab To Mycloudwallet">
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Switch To Mycloudwallet Tab">
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Perform Sign Up">
+<status status="NOT RUN" starttime="20250330 22:57:28.448" endtime="20250330 22:57:28.448"/>
+</kw>
+<kw name="Handle Captcha" library="common">
+<doc>Tick the captcha checkbox (used in sign-up)</doc>
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<kw name="Check Sign Up Success">
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<kw name="Switch To Tempmail Tab">
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<kw name="Wait For Activation Email">
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<kw name="Get Activation URL">
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<kw name="Switch To Mycloudwallet Tab">
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<kw name="Activate Account">
+<status status="NOT RUN" starttime="20250330 22:57:28.449" endtime="20250330 22:57:28.449"/>
+</kw>
+<doc>Automate sign-up with email activation</doc>
+<status status="FAIL" starttime="20250330 22:57:18.408" endtime="20250330 22:57:28.449">InvalidSelectorException: Message: invalid selector: An invalid or illegal selector was specified
+  (Session info: chrome=134.0.6998.166); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+0   chromedriver                        0x000000010538d804 cxxbridge1$str$ptr + 2785964
+1   chromedriver                        0x0000000105385ddc cxxbridge1$str$ptr + 2754692
+2   chromedriver                        0x0000000104ed9ea8 cxxbridge1$string$len + 92928
+3   chromedriver                        0x0000000104edfcd0 cxxbridge1$string$len + 117032
+4   chromedriver                        0x0000000104ee1d74 cxxbridge1$string$len + 125388
+5   chromedriver                        0x0000000104ee1e1c cxxbridge1$string$len + 125556
+6   chromedriver                        0x0000000104f20d9c cxxbridge1$string$len + 383476
+    [ Message content over the limit has been removed. ]
+...er                        0x0000000104f1535c cxxbridge1$string$len + 335796
+9   chromedriver                        0x0000000105352cd4 cxxbridge1$str$ptr + 2545532
+10  chromedriver                        0x0000000105355fa0 cxxbridge1$str$ptr + 2558536
+11  chromedriver                        0x0000000105332d04 cxxbridge1$str$ptr + 2414508
+12  chromedriver                        0x0000000105356800 cxxbridge1$str$ptr + 2560680
+13  chromedriver                        0x0000000105323ba0 cxxbridge1$str$ptr + 2352712
+14  chromedriver                        0x000000010537645c cxxbridge1$str$ptr + 2690820
+15  chromedriver                        0x00000001053765e4 cxxbridge1$str$ptr + 2691212
+16  chromedriver                        0x0000000105385a50 cxxbridge1$str$ptr + 2753784
+17  libsystem_pthread.dylib             0x0000000191a782e4 _pthread_start + 136
+18  libsystem_pthread.dylib             0x0000000191a730fc thread_start + 8</status>
+</test>
+<kw name="Close All Browsers Gracefully" library="common" type="TEARDOWN">
+<doc>Safely close all browser instances</doc>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Close All Browsers</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250330 22:57:28.450" endtime="20250330 22:57:29.025"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:28.450" endtime="20250330 22:57:29.025"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Terminate All Processes</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Terminate All Processes" library="Process">
+<doc>Terminates all still running processes started by this library.</doc>
+<status status="PASS" starttime="20250330 22:57:29.026" endtime="20250330 22:57:29.026"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:29.026" endtime="20250330 22:57:29.026"/>
+</kw>
+<status status="PASS" starttime="20250330 22:57:28.450" endtime="20250330 22:57:29.026"/>
+</kw>
+<status status="FAIL" starttime="20250330 22:57:15.712" endtime="20250330 22:57:29.026"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Signup Test">Signup Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
