@@ -40,6 +40,8 @@ Switch To Tab
     [Arguments]    ${tab_index}
     ${handles}=    Get Window Handles
     Switch Window    ${handles}[${tab_index}]
+    Log To Console    Switching back to ${handles}[${tab_index}] tab...
+
 
 Handle Captcha
     [Documentation]    Tick the captcha checkbox (used in sign-up)
